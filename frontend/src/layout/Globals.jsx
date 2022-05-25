@@ -1,4 +1,7 @@
 import { createGlobalStyle } from "styled-components";
+import Footer from "../components/footer/Footer";
+import Nav from "../components/Nav/Nav";
+import styled from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -23,11 +26,23 @@ a {
 }
 `;
 
+const Body = styled.div`
+margin: auto;
+
+@media screen and (min-width: 700px) {
+  max-width: 700px;
+}
+`
+
 const Layout = ({ children }) => {
     return (
         <>
             <GlobalStyle />
+            <Nav />
+            <Body>
             {children}
+            <Footer />
+            </Body>
         </>
     );
 };
